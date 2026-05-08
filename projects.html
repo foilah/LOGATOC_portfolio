@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff7fa, #f8efff, #fff4ec);
+            color: #4a3d45;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 25px;
+        }
+
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.5;
+        }
+
+        .shape1 {
+            width: 280px;
+            height: 280px;
+            background: #ffdbe8;
+            top: 40px;
+            left: -80px;
+        }
+
+        .shape2 {
+            width: 240px;
+            height: 240px;
+            background: #eadbff;
+            top: 420px;
+            right: -70px;
+        }
+
+        .shape3 {
+            width: 220px;
+            height: 220px;
+            background: #ffe8d9;
+            bottom: 60px;
+            left: 40%;
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1150px;
+            margin: 20px auto 0;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.68);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 214, 230, 0.8);
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(191, 136, 164, 0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #9c5f7f;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6d5864;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c26f98;
+        }
+
+        .activities-section {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(255, 220, 230, 0.75);
+            border-radius: 30px;
+            padding: 35px;
+            box-shadow: 0 12px 28px rgba(185, 127, 156, 0.08);
+        }
+
+        .activities-section h2 {
+            color: #8f5e78;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .certificate-intro {
+            color: #5f5058;
+            margin-bottom: 25px;
+            max-width: 850px;
+        }
+
+        .activity-file-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .activity-file-card {
+            background: linear-gradient(135deg, #fffdfd, #fff4f8, #faf2ff);
+            border: 1px solid rgba(255, 220, 230, 0.7);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(185, 127, 156, 0.08);
+            transition: 0.3s ease;
+            overflow: hidden;
+        }
+
+        .activity-file-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(185, 127, 156, 0.14);
+        }
+
+        .activity-file-card h3 {
+            color: #a16084;
+            margin-bottom: 12px;
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .activity-file-card p {
+            color: #5f5058;
+            font-size: 15px;
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 22px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255, 220, 230, 0.8);
+            box-shadow: 0 8px 20px rgba(185, 127, 156, 0.12);
+        }
+
+        .project-media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .project-media-grid img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 220, 230, 0.8);
+            box-shadow: 0 8px 20px rgba(185, 127, 156, 0.12);
+        }
+
+        footer {
+            width: 90%;
+            max-width: 1150px;
+            margin: 0 auto 25px;
+            text-align: center;
+            padding: 24px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #ffe2ec, #eee1ff, #fff0e7);
+            color: #84556f;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(185, 127, 156, 0.08);
+        }
+
+        @media (max-width: 850px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .activity-file-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activities-section {
+                padding: 28px 22px;
+            }
+
+            .project-media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-media-grid img,
+            .project-image {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <nav class="navbar">
+        <div class="logo">Projects</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cisco.html">CISCO</a></li>
+            <li><a href="matlab.html">MATLAB</a></li>
+        </ul>
+    </nav>
+
+    <section class="activities-section projects-page">
+        <h2>My Projects</h2>
+
+        <p class="certificate-intro">
+            This page contains my academic and system-based projects, including design outputs,
+            documentation, and project-related requirements.
+        </p>
+
+        <div class="activity-file-grid">
+
+            <div class="activity-file-card project-card-with-image">
+                <div class="project-media-grid">
+                    <img src="images/projects/automatic-sink-1.jpg" alt="Bang-Gerahan Image 1">
+                    <img src="images/projects/automatic-sink-2.jpg" alt="Bang-Gerahan Image 2">
+                </div>
+
+                <h3>Bang-Gerahan</h3>
+                <p>
+                    Bang-Gerahan is a project focused on automation and convenience, designed to
+                    support touchless water control and improve hygiene through sensor-based operation.
+                </p>
+            </div>
+
+            <div class="activity-file-card project-card-with-image">
+                <img src="images/projects/broodicare.png" alt="BroodiCare Smart Brooder System" class="project-image">
+
+                <h3>BroodiCare: Smart Brooder System</h3>
+                <p>
+                    BroodiCare is a smart brooder system using computer vision for monitoring
+                    post-hatch native chicks. It focuses on improving chick care through automation,
+                    monitoring, and intelligent observation.
+                </p>
+            </div>
+
+            <div class="activity-file-card project-card-with-image">
+                <img src="images/projects/ez-menu.png" alt="EZ Menu Project" class="project-image">
+
+                <h3>EZ Menu</h3>
+                <p>
+                    EZ Menu is an online food ordering system for the MarSU College of Engineering that lets users
+                    view available meals and place orders conveniently through their devices.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 LOGATOC Academic Portfolio</p>
+    </footer>
+
+</body>
+</html>

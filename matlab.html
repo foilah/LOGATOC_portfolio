@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CISCO Activities</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff7fa, #f8efff, #fff4ec);
+            color: #4a3d45;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 25px;
+        }
+
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.5;
+        }
+
+        .shape1 {
+            width: 280px;
+            height: 280px;
+            background: #ffdbe8;
+            top: 40px;
+            left: -80px;
+        }
+
+        .shape2 {
+            width: 240px;
+            height: 240px;
+            background: #eadbff;
+            top: 420px;
+            right: -70px;
+        }
+
+        .shape3 {
+            width: 220px;
+            height: 220px;
+            background: #ffe8d9;
+            bottom: 60px;
+            left: 40%;
+        }
+
+        .navbar {
+            width: 90%;
+            max-width: 1150px;
+            margin: 20px auto 0;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.68);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 214, 230, 0.8);
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(191, 136, 164, 0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #9c5f7f;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #6d5864;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c26f98;
+        }
+
+        .activities-section {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto;
+            background: rgba(255, 255, 255, 0.78);
+            border: 1px solid rgba(255, 220, 230, 0.75);
+            border-radius: 30px;
+            padding: 35px;
+            box-shadow: 0 12px 28px rgba(185, 127, 156, 0.08);
+        }
+
+        .activities-section h2 {
+            color: #8f5e78;
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        .certificate-intro {
+            color: #5f5058;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        .activity-file-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .activity-file-card {
+            background: linear-gradient(135deg, #fffdfd, #fff4f8, #faf2ff);
+            border: 1px solid rgba(255, 220, 230, 0.7);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(185, 127, 156, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .activity-file-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(185, 127, 156, 0.14);
+        }
+
+        .activity-file-card h3 {
+            color: #a16084;
+            margin-bottom: 12px;
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .activity-file-card p {
+            color: #5f5058;
+            font-size: 15px;
+            margin-bottom: 18px;
+            line-height: 1.8;
+        }
+
+        .file-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .file-btn {
+            text-decoration: none;
+            background: linear-gradient(135deg, #f8bfd3, #d9c2ff);
+            color: #5a4250;
+            padding: 11px 18px;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 8px 18px rgba(192, 111, 148, 0.14);
+            transition: 0.3s ease;
+            display: inline-block;
+        }
+
+        .file-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary-file-btn {
+            background: #fff7fb;
+            color: #a45f82;
+            border: 1px solid #efcade;
+        }
+
+        footer {
+            width: 90%;
+            max-width: 1150px;
+            margin: 0 auto 25px;
+            text-align: center;
+            padding: 24px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #ffe2ec, #eee1ff, #fff0e7);
+            color: #84556f;
+            font-weight: 700;
+            box-shadow: 0 10px 25px rgba(185, 127, 156, 0.08);
+        }
+
+        @media (max-width: 850px) {
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .activity-file-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activities-section {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
+
+    <nav class="navbar">
+        <div class="logo">CISCO Activities</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <section class="activities-section cisco-page">
+        <h2>My CISCO Activities</h2>
+
+        <p class="certificate-intro">
+            This page contains my CISCO activities, including PDF documentation and Packet Tracer files.
+        </p>
+
+        <div class="activity-file-grid">
+
+            <div class="activity-file-card">
+                <h3>Activity 1: File Sharing using LAN Cable</h3>
+                <p>This activity contains my documentation for file sharing using LAN cable.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%201/LOGATOC_ACT1_File%20Sharing%20using%20LAN%20Cable.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 2: File Sharing using WiFi</h3>
+                <p>This activity contains my documentation for file sharing using WiFi.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%202/LOGATOC_ACT2_File%20Sharing%20using%20WiFi.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 3: Pinging</h3>
+                <p>This activity contains my documentation and Packet Tracer file about pinging.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%203/LOGATOC_ACT3%28PINGING%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%203/LOGATOC_ACT3%28PINGING%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 4: DHCP IPv4</h3>
+                <p>This activity contains my documentation and Packet Tracer file about DHCP IPv4.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%204/LOGATOC_ACT4%28DHCP%20IPv4%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%204/LOGATOC_ACT4%28DHCP%20IPv4%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 5: DHCP IPv6</h3>
+                <p>This activity contains my documentation and Packet Tracer file about DHCP IPv6.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%205/LOGATOC_ACT5%28DHCP%20IPv6%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%205/LOGATOC_ACT5%28DHCP%20IPv6%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 6: HTTP</h3>
+                <p>This activity contains my documentation and Packet Tracer file about HTTP.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%206/LOGATOC_ACT6%28HTTP%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%206/LOGATOC_ACT6%28HTTP%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 7: FTP File Transfer</h3>
+                <p>This activity contains my documentation and Packet Tracer file about FTP file transfer.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%207/LOGATOC_ACT7%28FTP_File%20Transfer%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%207/LOGATOC_ACT7%28FTP_File%20Transfer%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 8: DNS</h3>
+                <p>This activity contains my documentation and Packet Tracer file about DNS.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%208/LOGATOC_ACT8%28DNS%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%208/LOGATOC_ACT8%28DNS%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+            <div class="activity-file-card">
+                <h3>Activity 9: SMTP and POP3</h3>
+                <p>This activity contains my documentation and Packet Tracer file about SMTP and POP3.</p>
+
+                <div class="file-buttons">
+                    <a href="files/cisco/Activity%209/LOGATOC_ACT9%28SMTP_and_POP3%29.pdf" target="_blank" class="file-btn">
+                        View PDF
+                    </a>
+
+                    <a href="files/cisco/Activity%209/LOGATOC_ACT9%28SMTP_and_POP3%29.pkt" download class="file-btn secondary-file-btn">
+                        Download PKT
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 LOGATOC Academic Portfolio</p>
+    </footer>
+
+</body>
+</html>

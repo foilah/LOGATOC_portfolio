@@ -1,0 +1,1 @@
+stitch = imread("stitch.png");

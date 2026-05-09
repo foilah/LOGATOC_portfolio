@@ -194,6 +194,236 @@
             box-shadow: 0 10px 25px rgba(185, 127, 156, 0.08);
         }
 
+        /* ===== CREATIVE ANIMATIONS & EFFECTS - ADD ONLY ===== */
+
+@keyframes softFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-18px) scale(1.04);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 10px 25px rgba(185, 127, 156, 0.10);
+    }
+    50% {
+        box-shadow: 0 16px 35px rgba(194, 111, 152, 0.24);
+    }
+}
+
+@keyframes buttonShine {
+    0% {
+        left: -80%;
+    }
+    100% {
+        left: 130%;
+    }
+}
+
+/* Floating background shapes */
+.bg-shape {
+    animation: softFloat 6s ease-in-out infinite;
+}
+
+.shape2 {
+    animation-delay: 1.5s;
+}
+
+.shape3 {
+    animation-delay: 3s;
+}
+
+/* Smooth entrance animation */
+.navbar,
+.hero-text,
+.hero-image-side,
+.quick-info,
+.about-card,
+.skills-progress-wrapper,
+.activities-section,
+.certificate-section,
+.contact-section,
+footer {
+    animation: fadeSlideUp 0.9s ease both;
+}
+
+.hero-image-side {
+    animation-delay: 0.15s;
+}
+
+.quick-info {
+    animation-delay: 0.25s;
+}
+
+.about-card,
+.skill-progress-card,
+.bento-card,
+.certificate-card,
+.contact-card,
+.activity-file-card {
+    animation: fadeSlideUp 0.9s ease both;
+}
+
+/* Navbar glow effect */
+.navbar {
+    transition: 0.35s ease;
+}
+
+.navbar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(191, 136, 164, 0.16);
+}
+
+/* Links hover animation */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #f8bfd3, #d9c2ff);
+    transition: width 0.3s ease;
+    border-radius: 20px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Buttons shine effect */
+.btn,
+.file-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before,
+.file-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.35);
+    transform: skewX(-25deg);
+}
+
+.btn:hover::before,
+.file-btn:hover::before {
+    animation: buttonShine 0.8s ease;
+}
+
+.btn:hover,
+.file-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Hero image aesthetic hover */
+.hero-image-card,
+.image-frame img {
+    transition: 0.4s ease;
+}
+
+.hero-image-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    animation: glowPulse 1.8s ease-in-out infinite;
+}
+
+.hero-image-card:hover .image-frame img {
+    transform: scale(1.05);
+}
+
+/* Cards hover effect */
+.info-box,
+.about-card,
+.skill-progress-card,
+.bento-card,
+.certificate-card,
+.contact-card,
+.activity-file-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+}
+
+.info-box:hover,
+.about-card:hover,
+.skill-progress-card:hover,
+.bento-card:hover,
+.certificate-card:hover,
+.contact-card:hover,
+.activity-file-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(185, 127, 156, 0.16);
+    border-color: rgba(244, 170, 204, 0.9);
+}
+
+/* Skill bars animate */
+.skill-fill {
+    animation: skillGrow 1.6s ease forwards;
+    transform-origin: left;
+}
+
+@keyframes skillGrow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Certificate image effect */
+.certificate-card img,
+.project-image,
+.project-media-grid img {
+    transition: 0.4s ease;
+}
+
+.certificate-card:hover img,
+.project-image:hover,
+.project-media-grid img:hover {
+    transform: scale(1.04);
+    filter: brightness(1.04) contrast(1.02);
+}
+
+/* Cute heading effect */
+h1 span,
+.logo {
+    transition: 0.35s ease;
+}
+
+h1 span:hover,
+.logo:hover {
+    letter-spacing: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
         @media (max-width: 850px) {
             .navbar {
                 flex-direction: column;
